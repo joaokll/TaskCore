@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+}
+
+/* --- SIDEBAR RETRÁTIL (MENU LATERAL) --- */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background-color: #161b22;
+    border-right: 1px solid #30363d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.25s ease-in-out;
+    z-index: 10;
+}
+.sidebar.collapsed {
+    transform: translateX(-240px); /* Esconde jogando para a esquerda */
+}
+.sidebar-header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+}
+.workspace-title {
+    font-weight: 600;
+    color: #f0f6fc;
+}
+.toggle-btn, .open-btn {
+    background: none;
+    border: none;
+    color: #8b949e;
+    font-size: 16px;
+    cursor: pointer;
+}
+.open-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    display: none;
+    background-color: #21262d;
+    padding: 6px 10px;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    z-index: 9;
+}
+.sidebar-menu {
+    padding: 12px;
+}
+.sidebar-menu a {
+    display: block;
+    padding: 8px 12px;
+    color: #8b949e;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+.sidebar-menu a:hover, .sidebar-menu a.filter-active {
+    background-color: #21262d;
+    color: #f0f6fc;
+}
+.menu-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #58a6ff;
+    margin: 16px 12px 6px;
+    letter-spacing: 0.5px;
+}
+.divider { border: 0; border-top: 1px solid #30363d; margin: 12px 0; }
+.logout-link { color: #f85149 !important; }
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    margin-left: 240px;
+    padding: 40px;
+    width: 100%;
+    transition: margin-left 0.25s ease-in-out;
+    box-sizing: border-box;
+}
+.main-content.expanded {
+    margin-left: 0; /* Ocupa a tela inteira quando a sidebar recolhe */
+}
+.content-header h1 { color: #f0f6fc; font-size: 28px; margin-bottom: 4px; }
+.content-header p { color: #8b949e; margin-top: 0; }
+
+/* --- FORMULÁRIOS --- */
+.card-form {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+.card-form h3 { color: #f0f6fc; margin-top: 0; margin-bottom: 16px; }
+.form-group { display: flex; flex-direction: column; margin-bottom: 14px; }
+.form-group label { font-size: 13px; color: #8b949e; margin-bottom: 6px; }
+.form-group input, .form-group textarea, .form-group select {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #f0f6fc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+}
+.form-group input:focus, .form-group textarea:focus { 
+    border-color: #1f6feb; 
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.3);
+}
+.btn-primary {
+    background-color: #238636;
+    color: #ffffff;
+    border: 1px solid rgba(240,240,240,0.1);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.btn-primary:hover { background-color: #2ea043; }
+
+/* --- TABELAS --- */
+.notion-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+}
+.notion-table th, .notion-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+}
+.notion-table th { background-color: #21262d; color: #f0f6fc; font-size: 13px; }
+.checkbox-link { text-decoration: none; cursor: pointer; }
+.badge-period {
+    background-color: #21262d;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #58a6ff;
+    border: 1px solid #30363d;
+}
+.btn-delete { color: #f85149; text-decoration: none; font-size: 13px; }
+.btn-delete:hover { text-decoration: underline; }
+
+/* Linha cortada quando marcada como concluída */
+.row-done .task-title, .row-done .task-desc {
+    text-decoration: line-through;
+    color: #8b949e;
+}
+.text-center { text-align: center; }
+.empty-row { text-align: center; color: #8b949e; padding: 24px; }
