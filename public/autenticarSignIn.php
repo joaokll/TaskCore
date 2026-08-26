@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($usuario && password_verify($senha, $usuario['senha'])) {
                 $_SESSION['usuario_id']   = $usuario['id'];
                 $_SESSION['usuario_nome'] = $usuario['nome'];
-                header("");
+                header("Location: /public/dashboard");
                 exit;
             }
         } catch (PDOException $e) {
