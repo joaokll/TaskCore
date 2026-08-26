@@ -26,13 +26,13 @@ if (!isset($_SESSION[''])) {
         Novo bloco
     </button>
 </header>
-<main id="blocos"></main>
-<button
-    id="salvar"
-    class="btn-success"
-    onclick="salvarBanco()">
-    Salvar
-</button>
-<script src="assets/app.js"></script>
+    <main id="blocos"></main>
+    <button
+        id="salvar"
+        class="btn-success"
+        onclick="salvarBanco()">
+        Salvar
+    </button>
+    <script src="assets/app.js"></script>
 </body>
 </html>
