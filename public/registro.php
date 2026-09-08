@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up TaskCore</title>
-    <link rel="stylesheet" href="css/sign-up.css">
+    <link rel="stylesheet" href="css/registro.css">
 </head>
 <body>
     <img id="logo" src="css/images/taskcore-logo.svg" alt="TaskCore Logo">
@@ -30,7 +30,7 @@
     
     <div id="have-account-block">
         <h1>Already have an Account? </h1>
-        <a href="sign-in.php">Login</a>
+        <a href="login.php">Login</a>
     </div>
 </body>
 </html>

@@ -1,5 +1,4 @@
-CREATE DATABASE taskManager;
-
+CREATE DATABASE IF NOT EXISTS taskManager;
 USE taskManager;
 
 CREATE TABLE usuarios (
@@ -9,17 +8,16 @@ CREATE TABLE usuarios (
     senha VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Blocos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    nota_id INT 
-
-        FOREIGN KEY (nota_id)
-        REFERENCES notas(id)
-);
 
 CREATE TABLE Notas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    descrição VARCHAR(65535)
+    descrição TEXT
+);
+
+CREATE TABLE Blocos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    nota_id INT,
+    FOREIGN KEY (nota_id) REFERENCES notas(id) ON DELETE SET NULL
 );
